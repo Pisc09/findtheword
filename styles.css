@@ -1,0 +1,101 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f2f2f2;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 5em 5em;
+}
+h1 {
+  font-size: 4rem;
+}
+/* Grille de jeu */
+#grid {
+  display: grid;
+  gap: 1em;
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 1em;
+}
+
+.cell {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #d3d6da;
+  border-radius: 5px;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Clavier virtuel */
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.key {
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0.7em 1em;
+}
+.key.pressed {
+  background-color: #3779f3 !important;
+  transform: scale(0.95);
+}
+.key[data-key="Enter"],
+.key[data-key="Backspace"] {
+  background-color: #3779f3;
+}
+.key:hover {
+  background-color: #3779f3;
+}
+
+/* button {
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0.7em 1em;
+} */
