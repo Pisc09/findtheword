@@ -10,7 +10,7 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #f2f2f2;
+  background-color: #262626;
 
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
@@ -27,7 +27,11 @@ body {
   padding: 5em 5em;
 }
 h1 {
+  color: white;
   font-size: 4rem;
+}
+h1::first-letter {
+  color: #10b981;
 }
 /* Grille de jeu */
 #grid {
@@ -46,12 +50,30 @@ h1 {
   height: 5rem;
   display: flex;
   align-items: center;
-  background-color: #d3d6da;
+  background-color: #262626;
   border-radius: 5px;
+  color: white;
   justify-content: center;
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
+  border: 2px solid #404040;
+  transition: background 0.3s ease;
+}
+
+.cell.correct {
+  background: #10b981;
+  color: white;
+}
+
+.cell.present {
+  background: #fbbf24;
+  color: white;
+}
+
+.cell.absent {
+  background: #737373;
+  color: white;
 }
 
 /* Clavier virtuel */
@@ -68,7 +90,7 @@ h1 {
 }
 
 .key {
-  background-color: cornflowerblue;
+  background-color: #404040;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -89,13 +111,67 @@ h1 {
   background-color: #3779f3;
 }
 
-/* button {
-  background-color: cornflowerblue;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+/* Pour le clavier */
+.key.correct {
+  background: #10b981;
+}
+.key.present {
+  background: #fbbf24;
+}
+.key.absent {
+  background: #171717;
+}
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+#attemptsHistory {
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.attempt-row {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+}
+
+.mini-cell {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ddd;
+}
+
+#replayButton {
+  background: #6aaa64;
   color: white;
-  font-size: 3rem;
-  font-weight: bold;
-  padding: 0.7em 1em;
-} */
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none !important;
+}

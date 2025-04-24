@@ -14,14 +14,43 @@
     <title>Find the word</title>
   </head>
   <body>
-    <h1>Find the word</h1>
+    <header>
+      <h1>Find the <span style="color: #fbbf24">w</span>ord</h1>
+    </header>
 
-    <div id="grid">
-      <!-- Les lignes et colonnes -->
-    </div>
+    <main>
+      <section id="grid" aria-label="Grille de jeu">
+        <!-- Les lignes et colonnes -->
+      </section>
 
-    <div id="keyboard">
+      <dialog
+        id="gameModal"
+        class="modal hidden"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalSubtitle"
+      >
+        <article class="modal-content">
+          <button class="close" aria-label="Fermer la modale">&times;</button>
+          <h2 id="modalTitle">🎉 Félicitations !</h2>
+          <p id="modalSubtitle">
+            Vous avez trouvé en <span id="attemptCount">3</span> essais
+          </p>
+
+          <div
+            id="attemptsHistory"
+            role="region"
+            aria-label="Historique des tentatives"
+          >
+            <!-- Les tentatives passées seront générées ici -->
+          </div>
+
+          <button id="replayButton">Rejouer</button>
+        </article>
+      </dialog>
+    </main>
+
+    <aside id="keyboard" aria-label="Clavier virtuel">
       <!-- Le clavier virtuel -->
-    </div>
+    </aside>
   </body>
 </html>
